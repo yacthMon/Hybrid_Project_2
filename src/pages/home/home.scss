@@ -1,5 +1,10 @@
 page-home {
-
+	.toolbar-background {
+        background-color: #111111;
+      }
+      .toolbar-title {
+        color: #ffffff !important;
+      }
 	 .content {
         background-image: url('../../assets/imgs/bg02.jpg');
         -webkit-background-size: cover;
@@ -14,12 +19,11 @@ page-home {
 	.custom-text {
 		color :white;
 	}
+
     .item.item-input {
     	//background-color: transparent;
     	background-color: black;
     	opacity: 0.6;
-    	
-
 	}
 	.item-inner, ion-item {
   		border-bottom-color: transparent !important;

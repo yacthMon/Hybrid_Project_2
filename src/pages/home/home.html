@@ -7,12 +7,36 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>        
-        <ion-label> <ion-icon name="md-pin" class="custom-icon"></ion-icon> </ion-label>
-        <ion-input clearInput type="text" placeholder="Enter city, zip, or location" class="custom-text"></ion-input>
-</ion-item>
-<br>
-<img src="../../assets/imgs/calenPic.JPG">
-<br><br><br>
-<button ion-button full class="custom-text" (click)='goWeather()'>Forcast</button>
+  <ion-item>
+    <ion-label>
+      <ion-icon name="md-pin" class="custom-icon"></ion-icon>
+    </ion-label>
+    <ion-input clearInput type="text" placeholder="Enter city, zip, or location" class="custom-text"></ion-input>
+  </ion-item>
+  <h2 class="custom-text"> Create Event</h2>
+  <h4 class="custom-text">from {{today}} to {{startDate}} {{startTime}}</h4>
+
+  <ion-item>
+    <ion-label>Day</ion-label>
+    <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="startDate" min="{{day.getFullYear()}}"
+      max="2020"></ion-datetime>
+  </ion-item>
+  <ion-item class="custom-text">
+    <ion-label>Title : </ion-label>
+    <ion-input class="custom-text" type="text" [(ngModel)]="title"></ion-input>
+  </ion-item>
+  <ion-item class="custom-text">
+    <ion-label>Location : </ion-label>
+    <ion-input class="custom-text" type="text" [(ngModel)]="location"></ion-input>
+  </ion-item>
+  <ion-item class="custom-text">
+    <ion-label>Note : </ion-label>
+    <ion-textarea class="custom-text" [(ngModel)]="note"></ion-textarea>
+  </ion-item>
+
+  <br>
+  <button ion-button full class="custom-text" (click)='createEvent()'>Create Event</button>  
+  <br>
+  <button ion-button full class="custom-text" (click)="loadMap()">Check Map</button>
+
 </ion-content>
