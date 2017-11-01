@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 import { ToastController } from 'ionic-angular';
-import { WeatherPage } from '../weather/weather';
+import { GooglePlusPage } from '../google-plus/google-plus';
 import { MapPage } from '../map/map';
 @Component({
   selector: 'page-home',
@@ -26,8 +26,8 @@ export class HomePage {
     );
   }
 
-  goWeather() {
-    this.navCtrl.push(WeatherPage);
+  goGooglePlus() {
+    this.navCtrl.push(GooglePlusPage);
   }
 
   loadMap() {

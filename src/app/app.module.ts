@@ -5,16 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Calendar } from '@ionic-native/calendar';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { WeatherPage } from '../pages/weather/weather';
+import { GooglePlusPage } from '../pages/google-plus/google-plus';
 import { MapPage } from '../pages/map/map';
 
 @NgModule({
   declarations: [
     MyApp,
-    WeatherPage,
+    GooglePlusPage,
     MapPage,
     HomePage
   ],
@@ -27,13 +28,14 @@ import { MapPage } from '../pages/map/map';
     MyApp,
     HomePage,
     MapPage,
-    WeatherPage
+    GooglePlusPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Calendar,
     GoogleMaps,
+    GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
