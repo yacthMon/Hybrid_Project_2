@@ -22,17 +22,17 @@ export class MapPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {    
+  ionViewDidLoad() {
     this.loadMap();
   }
 
   loadMap() {
 
-    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+    let latLng = new google.maps.LatLng(13.6519688, 100.4938122);
 
     let mapOptions = {
       center: latLng,
-      zoom: 15,
+      zoom: 17,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 
@@ -40,7 +40,22 @@ export class MapPage {
 
   }
 
-  addMarker(){
-    
+  addMarker() {
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: this.map.getCenter()
+    });
+    let content = "<h4>My Marker !</h4>";
+    this.addInfoWindow(marker, content);
+  }
+
+  addInfoWindow(marker, content) {
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
   }
 }

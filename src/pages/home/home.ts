@@ -4,6 +4,7 @@ import { Calendar } from '@ionic-native/calendar';
 import { ToastController } from 'ionic-angular';
 import { GooglePlusPage } from '../google-plus/google-plus';
 import { MapPage } from '../map/map';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -35,7 +36,11 @@ export class HomePage {
   }
 
   createEvent(){    
-    this.calendar.createEvent(this.title, this.location, this.note, new Date(), new Date(this.endDate)).then(function (result) {
+    console.log("Create event work");
+    console.log(new Date());
+    console.log(new Date(this.endDate));
+    
+    this.calendar.createEventInteractively(this.title, this.location, this.note, new Date(), new Date(this.endDate)).then((result)=>{
       let toast = this.toastCtrl.create({
         message: 'Event Created !',
         duration: 2000,
@@ -44,8 +49,10 @@ export class HomePage {
         dismissOnPageChange: true
       });
       toast.present();
-    }, function (err) {
-      // error
+      console.log("Complete create event : " );
+      console.log(result);
+    },(err)=>{
+      console.log("Error create event : " + err);
     });
   }
 }

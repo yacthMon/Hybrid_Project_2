@@ -14,8 +14,7 @@ import { ToastController } from 'ionic-angular';
   templateUrl: 'google-plus.html',
 })
 export class GooglePlusPage {
-  profileName:string;
-  pictureURL:string;
+  user_data: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,private googlePlus: GooglePlus, public toastCtrl: ToastController) {
   }
 
@@ -24,27 +23,7 @@ export class GooglePlusPage {
   }
 
   loginGooglePlus(){
-    this.googlePlus.login({}, (user_data)=>{
-      let toast = this.toastCtrl.create({
-        message: 'Login with ' + user_data.displayName,
-        duration: 2000,
-        position: 'top',
-        showCloseButton: true,
-        dismissOnPageChange: true
-      });
-      toast.present();
-      this.profileName = user_data.displayName;
-      this.pictureURL = user_data.imageUrl;
-    }, (message)=>{
-      let toast = this.toastCtrl.create({
-        message: 'Loing failed!',
-        duration: 2000,
-        position: 'top',
-        showCloseButton: true,
-        dismissOnPageChange: true
-      });
-      toast.present();
-    })
+    this.googlePlus.login({})
     .then(res =>{let toast = this.toastCtrl.create({
       message: 'Loing Success!',
       duration: 2000,
@@ -52,6 +31,9 @@ export class GooglePlusPage {
       showCloseButton: true,
       dismissOnPageChange: true
     });
+    console.log("Login data");
+    console.log(res);
+    this.user_data = res;
     toast.present();})
     .catch(err => {let toast = this.toastCtrl.create({
       message: 'Loing Error! ' + err,

@@ -14,7 +14,9 @@
 
 
 <ion-content padding>
-Hello : {{profileName}}
-is this your profile picture ?
-<img src="{{pictureURL}}" alt="your profile picture, is that you ??">
+  <div *ngIf="user_data">
+    <img src="{{user_data.imageUrl}}" alt="your profile picture, is that you ??">
+    <br> Hello : {{user_data.displayName}}
+    <br> is this your profile picture ?
+  </div>
 </ion-content>

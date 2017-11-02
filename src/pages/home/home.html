@@ -7,27 +7,22 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>
-      <ion-icon name="md-pin" class="custom-icon"></ion-icon>
-    </ion-label>
-    <ion-input clearInput type="text" placeholder="Enter city, zip, or location" class="custom-text"></ion-input>
-  </ion-item>
   <h2 class="custom-text"> Create Event</h2>
   <h4 class="custom-text">from {{today}} to {{startDate}} {{startTime}}</h4>
 
   <ion-item>
     <ion-label>Day</ion-label>
-    <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="startDate" min="{{day.getFullYear()}}"
-      max="2020"></ion-datetime>
+    <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="endDate" min="{{day.getFullYear()}}" max="2020"></ion-datetime>
   </ion-item>
   <ion-item class="custom-text">
     <ion-label>Title : </ion-label>
     <ion-input class="custom-text" type="text" [(ngModel)]="title"></ion-input>
   </ion-item>
-  <ion-item class="custom-text">
-    <ion-label>Location : </ion-label>
-    <ion-input class="custom-text" type="text" [(ngModel)]="location"></ion-input>
+  <ion-item>
+    <ion-label>
+      <ion-icon name="md-pin" class="custom-icon"></ion-icon>
+    </ion-label>
+    <ion-input clearInput type="text" placeholder="Enter city, zip, or location" class="custom-text" [(ngModel)]="location"></ion-input>
   </ion-item>
   <ion-item class="custom-text">
     <ion-label>Note : </ion-label>
@@ -35,14 +30,14 @@
   </ion-item>
 
   <br>
-  <button ion-button full class="custom-text" (click)='createEvent()'>Create Event</button>  
+  <button ion-button full class="custom-text" (click)='createEvent()'>Create Event</button>
   <br>
   <button ion-button full class="custom-text" (click)="loadMap()">Check Map</button>
   <ion-list style="align-items:center;">
-      <button ion-button color="googlePlus" (click)="goGooglePlus()">
-          <div>
-            <ion-icon name="logo-googleplus"></ion-icon>
-          </div> เข้าสู่ระบบด้วย Google</button>
+    <button ion-button color="googlePlus" (click)="goGooglePlus()">
+      <div>
+        <ion-icon name="logo-googleplus"></ion-icon>
+      </div> เข้าสู่ระบบด้วย Google</button>
   </ion-list>
 
 </ion-content>

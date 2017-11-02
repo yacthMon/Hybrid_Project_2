@@ -82,11 +82,11 @@
     <plugin name="cordova-plugin-googlemaps" spec="^2.0.11">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBToA89rUIVWfPzoCZ_NUgBTp_XI9rIk_o" />
     </plugin>
+    <plugin name="cordova-plugin-googleplus" spec="^5.1.1">
+        <variable name="REVERSED_CLIENT_ID" value="myreversedclientid" />
+    </plugin>
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <plugin name="cordova-plugin-googleplus" spec="^5.1.1" />
-        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.337484147927-ojgcnbtqec9cad81jo7jntvfbkvsrpjv" />
-    </plugin>
 </widget>
